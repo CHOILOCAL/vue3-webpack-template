@@ -2,18 +2,8 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const{ VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  resolve: {
-    extensions: ['.js', '.vue'],
-    // 경로 별칭
-    alias: {
-      '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
-    }
-  },
-
   // 파일을 읽어들이기 시작하는 진입점 설정
   entry: './src/main.js',
 
@@ -33,10 +23,9 @@ module.exports = {
         use: 'vue-loader'
       },
       {
-        test: /\.s?css$/, 
+        test: /\.s?css$/,
         use: [
           // 순서 중요!
-          'vue-style-loader',
           'style-loader',
           'css-loader',
           'postcss-loader',
@@ -49,10 +38,6 @@ module.exports = {
         use: [
           'babel-loader'
         ]
-      },
-      {
-        test: /\.(png|jpe?g|gif|webp)$/,
-        use: 'file-loader'
       }
     ]
   },
@@ -66,8 +51,7 @@ module.exports = {
       patterns: [
         { from: 'static' }
       ]
-    }),
-    new VueLoaderPlugin()
+    })
   ],
 
   // 개발 서버 옵션

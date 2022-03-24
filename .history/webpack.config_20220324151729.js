@@ -6,11 +6,9 @@ const{ VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.vue'],
-    // 경로 별칭
+    extensions: ['.js', '.vue']
     alias: {
-      '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
+      '~': '',
     }
   },
 

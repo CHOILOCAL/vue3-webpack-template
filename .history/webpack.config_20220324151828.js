@@ -10,7 +10,7 @@ module.exports = {
     // 경로 별칭
     alias: {
       '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
+      'assets': ''
     }
   },
 

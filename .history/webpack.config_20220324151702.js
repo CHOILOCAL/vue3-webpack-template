@@ -6,12 +6,7 @@ const{ VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.vue'],
-    // 경로 별칭
-    alias: {
-      '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
-    }
+    extensions: ['.js', '.vue']
   },
 
   // 파일을 읽어들이기 시작하는 진입점 설정
